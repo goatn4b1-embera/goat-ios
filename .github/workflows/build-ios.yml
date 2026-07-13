@@ -67,8 +67,8 @@ jobs:
           xcode-version: latest-stable
 
       # 9. Build iOS app
-      - name: 🍎 Build iOS (Simulator)
-        run: php artisan native:build ios --no-interaction
+      - name: 🍎 Build iOS (Package)
+        run: php artisan native:package ios --no-interaction
         env:
           NATIVEPHP_APP_ID: com.habitgoat.app
           NATIVEPHP_APP_NAME: "Habit Goat"
