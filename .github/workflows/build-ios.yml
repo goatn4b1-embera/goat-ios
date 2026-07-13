@@ -17,11 +17,11 @@ jobs:
       - name: ⬇️ Checkout code
         uses: actions/checkout@v4
 
-      # 2. Cài PHP 8.3
-      - name: 🐘 Setup PHP 8.3
+      # 2. Cài PHP 8.4
+      - name: 🐘 Setup PHP 8.4
         uses: shivammathur/setup-php@v2
         with:
-          php-version: "8.3"
+          php-version: "8.4"
           extensions: mbstring, xml, bcmath, sqlite3, pdo_sqlite
           coverage: none
 
@@ -36,7 +36,7 @@ jobs:
 
       # 4. Cài Composer dependencies
       - name: 🔧 Install Composer dependencies
-        run: composer install --no-interaction --prefer-dist --optimize-autoloader
+        run: composer install --no-interaction --prefer-dist --optimize-autoloader --ignore-platform-req=php
 
       # 5. Tạo file .env
       - name: ⚙️ Setup environment
