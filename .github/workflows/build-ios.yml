@@ -67,6 +67,9 @@ jobs:
           xcode-version: latest-stable
 
       # 9. Build iOS app
+      - name: 📁 Create nativephp directory
+        run: mkdir -p nativephp
+
       - name: 🍎 Build iOS (Package)
         run: php artisan native:package ios --no-interaction
         env:
